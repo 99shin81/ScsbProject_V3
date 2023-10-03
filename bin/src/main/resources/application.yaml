@@ -1,0 +1,44 @@
+camunda.bpm.admin-user:
+  id: demo
+  password: demo
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/WirelessDevice?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+#view
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: false
+    generate-ddl: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+
+
+
+  #Turn off the Spring Boot Banner
+#  main:
+#    banner-mode: off
+
+  #Reduce logging level. Set logging level To Warn
+  #出錯仍然會出現異常訊息
+#logging:
+#  level:
+#    root: warn
